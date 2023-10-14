@@ -3,8 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { LayoutModule } from './modules/layout/layout.module'
+
 import { AppComponent } from './app.component';
 
+// lit-element
 import { HelloElement } from './hello-element';
 
 @NgModule({
@@ -15,6 +19,7 @@ import { HelloElement } from './hello-element';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    LayoutModule,
   ],
   providers: [HelloElement],
   bootstrap: [AppComponent],
