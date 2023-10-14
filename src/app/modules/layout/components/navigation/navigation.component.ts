@@ -14,18 +14,6 @@ export class NavigationComponent {
   is_authenticated: boolean;
   // update = effect(() => this.is_authenticated = this.#authSvc.access_token !== '' )
 
-  goToHome() {
-    this.#router.navigate(['/home']);
-  }
-
-  goToAbout() {
-    this.#router.navigate(['/about']);
-  }
-
-  goToAdmin() {
-    this.#router.navigate(['/admin']);
-  }
-
   logout(): void {
     // this.#authSvc.logout();
     this.#router.navigate(['/login']);
