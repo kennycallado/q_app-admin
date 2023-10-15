@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin.component.sass']
 })
 export class AdminComponent {
+  #router = inject(Router)
 
+  ngAfterViewInit() {
+    this.#router.navigate(['/admin/dashboard'])
+  }
 }

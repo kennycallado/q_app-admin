@@ -1,8 +1,17 @@
 <app-sidebar>
     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
 
+      <!-- <li class="nav-item"> -->
+      <!--   <a class="nav-link text-truncate" [routerLink]="['/admin']"> -->
+      <!--     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16"> -->
+      <!--       <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/> -->
+      <!--     </svg> -->
+      <!--     <span class="ms-1 d-none d-sm-inline">Admin</span> -->
+      <!--   </a> -->
+      <!-- </li> -->
+
       <li class="nav-item">
-        <a class="nav-link text-truncate" [routerLink]="['/admin']">
+        <a class="nav-link text-truncate" [routerLink]="['dashboard']">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
             <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
           </svg>
@@ -21,6 +30,16 @@
       </li>
 
       <li>
+        <a class="nav-link text-truncate" [routerLink]="['questions']">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+          </svg>
+          <span class="ms-1 d-none d-sm-inline">Questions</span>
+        </a>
+      </li>
+
+      <li>
         <a href="#" class="nav-link text-truncate">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-wrench-adjustable-circle" viewBox="0 0 16 16">
             <path d="M12.496 8a4.491 4.491 0 0 1-1.703 3.526L9.497 8.5l2.959-1.11c.027.2.04.403.04.61Z"/>
@@ -33,12 +52,12 @@
     </ul>
 </app-sidebar>
 
-<!-- Container and button -->
+<!-- Container -->
 <div class="container-fluid">
   <div class="row">
     <div class="col min-vh-100 py-3">
 
-      <!-- toggler -->
+      <!-- toggler button -->
       <button class="btn fixed-bottom ms-3 mb-5 bg-primary bg-opacity-50" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
         <div class="text-dark">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
@@ -48,32 +67,6 @@
       </button>
 
       <router-outlet></router-outlet>
-
-      <div class="card mb-3">
-        <h1 class="card-body display-6 text-center"><u>Dashboard</u></h1>
-      </div>
-
-      <div class="row">
-        <div class="col text-center">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Project selector</h5>
-              <hr>
-              <app-project-selector/>
-            </div>
-          </div>
-        </div>
-
-        <div class="col text-center">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Notifications</h5>
-              <hr>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>
