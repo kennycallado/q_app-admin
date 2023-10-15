@@ -1,6 +1,6 @@
 export class Question {
   id: number;
-  type: QuestionType;
+  question_type: QuestionType;
   question: string;
 }
 
