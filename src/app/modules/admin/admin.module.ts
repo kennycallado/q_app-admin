@@ -10,6 +10,7 @@ import { ProjectComponent } from './components/project/project.component';
 import { ProjectSelectorComponent } from './components/project-selector/project-selector.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SlidesComponent } from './components/slides/slides.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ProjectSelectorComponent,
     QuestionsComponent,
     DashboardComponent,
+    SlidesComponent,
   ],
   imports: [
     CommonModule,
