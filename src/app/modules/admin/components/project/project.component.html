@@ -27,20 +27,38 @@
 
           <div class="card-body">
             <ul class="list-group">
-              <li class="list-group-item">step</li>
-              <li class="list-group-item">mood</li>
-              <li class="list-group-item">
+
+              <li class="list-group-item" *ngFor="let key of keys">
                 <div class="row">
                   <div class="col-9">
-                    <input class="form-control border-info" type="text" placeholder="New" />
+                    <span>{{ key }}</span>
                   </div>
 
                   <div class="col">
-                    <button class="btn btn-outline-info bg-primary bg-opacity-10" type="button">Add</button>
+                    <span (click)="removeKey(key)">❌</span>
                   </div>
                 </div>
               </li>
+
+              <!-- new element -->
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-9">
+                    <input class="form-control border-info text-center" type="text" placeholder="New" #key/>
+                  </div>
+
+                  <div class="col">
+                    <button class="btn btn-outline-info bg-primary bg-opacity-10" type="button" (click)="addKey(key)">Add</button>
+                  </div>
+                </div>
+              </li>
+              <!-- new element -->
+
             </ul>
+          </div>
+
+          <div class="card-footer">
+            <button class="btn btn-outline-primary bg-primary bg-opacity-10 w-100 fw-bold" type="button" (click)="save()">Save</button>
           </div>
 
         </div>

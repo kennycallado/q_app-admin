@@ -8,5 +8,5 @@
 - generate servi `ng g s --skip-tests providers/services/auth`
 - generate class `ng g class --type=model providers/models/project`
 - generate modul `ng g module modules/layout`
-- generate compo `ng g component --module modules/layout modules/layout`
+- generate compo `ng g component --module modules/admin modules/admin/components/<name>`
 
