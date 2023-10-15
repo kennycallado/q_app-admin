@@ -1,16 +1,12 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
-
-import { LayoutModule } from './modules/layout/layout.module'
-
 import { AppComponent } from './app.component';
 
-// lit-element
-import { HelloElement } from './hello-element';
+import { LayoutModule } from './modules/layout/layout.module'
 
 @NgModule({
   declarations: [
@@ -23,9 +19,7 @@ import { HelloElement } from './hello-element';
     LayoutModule,
     RouterModule
   ],
-  providers: [HelloElement],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
 export class AppModule { }

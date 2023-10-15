@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
 import { LayoutComponent } from './layout.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
-
+// lit element
+import { FooterElement } from './components/footer/footer.element'
 
 @NgModule({
   declarations: [
     LayoutComponent,
-    FooterComponent,
     NavigationComponent,
   ],
   imports: [
@@ -19,6 +19,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
   ],
   exports: [
     LayoutComponent
-  ]
+  ],
+  providers: [FooterElement],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class LayoutModule { }
