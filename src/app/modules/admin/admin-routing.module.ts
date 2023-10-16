@@ -6,6 +6,7 @@ import { QuestionsComponent } from './components/questions/questions.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SlidesComponent } from './components/slides/slides.component';
 import { MediaComponent } from './components/media/media.component';
+import { ResourcesComponent } from './components/resources/resources.component';
 
 const routes: Routes = [
   {
@@ -15,8 +16,9 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'project', component: ProjectComponent },
       { path: 'questions', component: QuestionsComponent },
-      { path: 'slides', component: SlidesComponent },
       { path: 'media', component: MediaComponent },
+      { path: 'slides', component: SlidesComponent },
+      { path: 'resources', component: ResourcesComponent },
     ]
   },
 ];

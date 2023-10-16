@@ -12,6 +12,7 @@ import { QuestionsComponent } from './components/questions/questions.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SlidesComponent } from './components/slides/slides.component';
 import { MediaComponent } from './components/media/media.component';
+import { ResourcesComponent } from './components/resources/resources.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MediaComponent } from './components/media/media.component';
     DashboardComponent,
     SlidesComponent,
     MediaComponent,
+    ResourcesComponent,
   ],
   imports: [
     CommonModule,
