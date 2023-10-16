@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SlidesComponent } from './components/slides/slides.component';
 import { MediaComponent } from './components/media/media.component';
 import { ResourcesComponent } from './components/resources/resources.component';
+import { ScriptsComponent } from './components/scripts/scripts.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ResourcesComponent } from './components/resources/resources.component';
     SlidesComponent,
     MediaComponent,
     ResourcesComponent,
+    ScriptsComponent,
   ],
   imports: [
     CommonModule,
