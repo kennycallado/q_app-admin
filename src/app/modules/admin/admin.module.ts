@@ -14,6 +14,7 @@ import { SlidesComponent } from './components/slides/slides.component';
 import { MediaComponent } from './components/media/media.component';
 import { ResourcesComponent } from './components/resources/resources.component';
 import { ScriptsComponent } from './components/scripts/scripts.component';
+import { CronjobsComponent } from './components/cronjobs/cronjobs.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ScriptsComponent } from './components/scripts/scripts.component';
     MediaComponent,
     ResourcesComponent,
     ScriptsComponent,
+    CronjobsComponent,
   ],
   imports: [
     CommonModule,
