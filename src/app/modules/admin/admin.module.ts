@@ -11,6 +11,7 @@ import { ProjectSelectorComponent } from './components/project-selector/project-
 import { QuestionsComponent } from './components/questions/questions.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SlidesComponent } from './components/slides/slides.component';
+import { MediaComponent } from './components/media/media.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SlidesComponent } from './components/slides/slides.component';
     QuestionsComponent,
     DashboardComponent,
     SlidesComponent,
+    MediaComponent,
   ],
   imports: [
     CommonModule,
