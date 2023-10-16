@@ -9,7 +9,7 @@ import { Slide, SlideType } from 'src/app/providers/models/slide.model';
 })
 export class SlidesComponent {
   currentSlide: Slide = { id: 0, slide_type: SlideType.Content, title: 'Slide 1', content: 'This is the first slide' };
-  slidesTypes: String[] = Object.keys(SlideType).map(key => SlideType[key]);
+  slideTypes: String[] = Object.keys(SlideType).map(key => SlideType[key]);
 
   slides: Slide[] = [
     { id: 1, slide_type: SlideType.Content, title: 'Slide 1', content: 'This is the second slide' },
