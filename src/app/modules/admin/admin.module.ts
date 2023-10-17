@@ -15,6 +15,8 @@ import { MediaComponent } from './components/media/media.component';
 import { ResourcesComponent } from './components/resources/resources.component';
 import { ScriptsComponent } from './components/scripts/scripts.component';
 import { CronjobsComponent } from './components/cronjobs/cronjobs.component';
+import { UsersCreateComponent } from './components/users-create/users-create.component';
+import { UsersManageComponent } from './components/users-manage/users-manage.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { CronjobsComponent } from './components/cronjobs/cronjobs.component';
     ResourcesComponent,
     ScriptsComponent,
     CronjobsComponent,
+    UsersCreateComponent,
+    UsersManageComponent,
   ],
   imports: [
     CommonModule,

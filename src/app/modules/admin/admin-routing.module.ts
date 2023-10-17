@@ -9,6 +9,8 @@ import { MediaComponent } from './components/media/media.component';
 import { ResourcesComponent } from './components/resources/resources.component';
 import { ScriptsComponent } from './components/scripts/scripts.component';
 import { CronjobsComponent } from './components/cronjobs/cronjobs.component';
+import { UsersCreateComponent } from './components/users-create/users-create.component';
+import { UsersManageComponent } from './components/users-manage/users-manage.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,9 @@ const routes: Routes = [
       { path: 'resources', component: ResourcesComponent },
       { path: 'scripts', component: ScriptsComponent },
       { path: 'cronjobs', component: CronjobsComponent },
+      { path: 'users', children: [
+        {path: 'create', component: UsersCreateComponent},
+        {path: 'manage', component: UsersManageComponent}, ] },
     ]
   },
 ];
