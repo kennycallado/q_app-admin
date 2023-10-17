@@ -17,6 +17,7 @@ import { ScriptsComponent } from './components/scripts/scripts.component';
 import { CronjobsComponent } from './components/cronjobs/cronjobs.component';
 import { UsersCreateComponent } from './components/users-create/users-create.component';
 import { UsersManageComponent } from './components/users-manage/users-manage.component';
+import { TokenComponent } from './components/token/token.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { UsersManageComponent } from './components/users-manage/users-manage.com
     CronjobsComponent,
     UsersCreateComponent,
     UsersManageComponent,
+    TokenComponent,
   ],
   imports: [
     CommonModule,
