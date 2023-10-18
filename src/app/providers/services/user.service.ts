@@ -44,6 +44,18 @@ export class UserService {
   private get_api_user(): Observable<User> {
     let url = this.#user().id ? this.#user_url + this.#user().id + '/' : this.#user_url + 'me/' ;
 
+    let max_retry = 10
+    while (this.#authSvc.access_token == null && max_retry > 0) {
+      setTimeout(() => {}, 100)
+      max_retry--
+    }
+
+    if (this.#authSvc.access_token == null) {
+      alert('No access token')
+
+      window.history.back()
+    }
+
     let headers = {
       Authorization: 'Bearer ' + this.#authSvc.access_token,
       ContentType: 'application/json'}
