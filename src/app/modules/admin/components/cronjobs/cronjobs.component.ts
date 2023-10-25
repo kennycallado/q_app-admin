@@ -50,4 +50,17 @@ export class CronjobsComponent {
 
     return cronjob.job.status === EscalonJobStatus.Failed;
   }
+
+  stateAsEmoji(escalon: EscalonJob): String {
+    switch (escalon.status) {
+      case EscalonJobStatus.Running:
+        return '🏃';
+      case EscalonJobStatus.Failed:
+        return '🚫';
+      case EscalonJobStatus.Scheduled:
+        return '🕒';
+      case EscalonJobStatus.Done:
+        return '✅';
+    }
+  }
 }
