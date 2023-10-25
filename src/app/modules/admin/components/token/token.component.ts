@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/providers/services/user.service';
 
 @Component({
   selector: 'app-token',
@@ -7,8 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./token.component.sass']
 })
 export class TokenComponent implements OnInit {
-  #route = inject(ActivatedRoute)
-  #router = inject(Router)
+  #route    = inject(ActivatedRoute)
+  #router   = inject(Router)
+  #userSvc  = inject(UserService)
 
   #token: string
 
@@ -16,11 +18,18 @@ export class TokenComponent implements OnInit {
     this.#token = this.#route.snapshot.queryParams['access_token']
 
     if (this.#token) {
-      localStorage.setItem('access_token', this.#token);
+      // should be from auth
+      localStorage.setItem('access_token', this.#token)
 
-      this.#router.navigate(['/admin']);
+      try {
+        this.#userSvc.me()
+
+        this.#router.navigate(['/admin'])
+      } catch (e) {
+        window.history.back()
+      }
+    } else {
+      window.history.back()
     }
-
-    window.history.back();
   }
 }
