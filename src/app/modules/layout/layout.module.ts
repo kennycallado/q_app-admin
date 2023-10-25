@@ -6,12 +6,14 @@ import { LayoutComponent } from './layout.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
 // lit element
-import { FooterElement } from './components/footer/footer.element'
+import { FooterElement } from './components/footer/footer.element';
+import { ModalComponent } from './components/modal/modal.component'
 
 @NgModule({
   declarations: [
     LayoutComponent,
     NavigationComponent,
+    ModalComponent,
   ],
   imports: [
     CommonModule,
