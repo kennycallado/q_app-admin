@@ -19,7 +19,7 @@ export class ModalComponent {
         const recipient = button.getAttribute('data-bs-whatever')
 
         if (recipient === 'user') {
-          this.content = this.getUser()
+          this.content = JSON.parse(this.getUser())
         }
 
         const modalTitle: any = modal.nativeElement.querySelector('.modal-title')
