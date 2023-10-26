@@ -7,10 +7,10 @@ import { Question, QuestionType } from 'src/app/providers/models/question.model'
   styleUrls: ['./questions.component.sass']
 })
 export class QuestionsComponent {
-  currentQuestion: Question = { id: 0, question: '', question_type: QuestionType.Range };
+  currentQuestion: Question = { id: 0, question_type: QuestionType.Range, content: '' };
   questionTypes: String[] = Object.values(QuestionType);
   questions: Question[] = [
-    { id: 1, question: 'What is it?', question_type: QuestionType.Range },
+    { id: 1, content: 'What is it?', question_type: QuestionType.Range },
   ]
 
   editQuestion(id: number) {
@@ -25,6 +25,6 @@ export class QuestionsComponent {
       this.questions.push(this.currentQuestion);
     }
 
-    this.currentQuestion = { id: 0, question: '', question_type: QuestionType.Range };
+    this.currentQuestion = { id: 0, content: '', question_type: QuestionType.Range };
   }
 }

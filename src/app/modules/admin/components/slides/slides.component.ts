@@ -14,7 +14,6 @@ export class SlidesComponent {
   slides: Slide[] = [
     { id: 1, slide_type: SlideType.Content, title: 'Slide 1', content: 'This is the second slide' },
     { id: 2, slide_type: SlideType.Content, title: 'Slide 2', content: 'This is the third slide' },
-    { id: 3, slide_type: SlideType.Input, title: 'Slide 3', question:  { id: 0, question_type: QuestionType.Range, question: 'What is your name?' }},
+    { id: 3, slide_type: SlideType.Input, title: 'Slide 3', question:  { id: 0, question_type: QuestionType.Range, content: 'What is your name?' }},
   ];
-
 }

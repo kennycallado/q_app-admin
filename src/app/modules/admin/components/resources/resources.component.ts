@@ -18,8 +18,8 @@ export class ResourcesComponent {
       { id: 2, title: 'Slide 2', slide_type: SlideType.Content, content: 'This is the content of the second slide' }, ] } },
 
     { id: 2, resource_type: ResourceType.Form, title: 'Slide 2', description: 'This is the second slide', content: { form: [
-      { id: 1, question: 'What is your name?', question_type: QuestionType.Input },
-      { id: 2, question: 'What is your quest?', question_type: QuestionType.Input }, ] } },
+      { id: 1, content: 'What is your name?', question_type: QuestionType.Input },
+      { id: 2, content: 'What is your quest?', question_type: QuestionType.Input }, ] } },
   ]
 
   getResourceContent(resource: Resource): string {
