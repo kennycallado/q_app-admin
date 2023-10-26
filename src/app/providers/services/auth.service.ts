@@ -21,9 +21,8 @@ export class AuthService {
   #injector   = inject(Injector)
   #http       = inject(HttpClient)
 
-  #base_url  = isDevMode() ? "http://localhost:8000/" : BASE_URL
-  #auth_url   = isDevMode() ? "http://localhost:8003/auth/" : AUTH_URL
-  // #auth_url   = "http://localhost:8003/auth/"
+  #base_url   = !isDevMode() ? BASE_URL : "http://localhost:8000/"
+  #auth_url   = !isDevMode() ? AUTH_URL : "http://localhost:8003/auth/"
 
   update = effect(() => { localStorage.setItem('access_token', this.#access_token()) })
   #access_token = signal<string>(localStorage.getItem('access_token') || '')

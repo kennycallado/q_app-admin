@@ -17,8 +17,7 @@ export class UserService {
   #authSvc    = inject(AuthService)
   #http       = inject(HttpClient)
 
-  #user_url   = isDevMode() ? "http://localhost:8002/api/v1/user/" : USER_URL
-  // #user_url   = "http://localhost:8002/api/v1/user/"
+  #user_url   = isDevMode() ? USER_URL : "http://localhost:8002/api/v1/user/"
 
   #user       = signal<User>(this.#storageSvc.get('user') as User || new User)
   user        = computed(() => this.#user())
@@ -29,13 +28,6 @@ export class UserService {
   update_record(record: Record<string, number | string>) {
     this.#user.set({...this.#user(), project: {...this.#user().project, record }})
   }
-
-  // get_record() {
-  //   this.get_api_user().subscribe(res => {
-  //     this.#user.set(res)
-  //     return this.#user().project.record
-  //   })
-  // }
 
   me() {
     this.get_api_user().subscribe(res => this.#user.set(res))
@@ -63,7 +55,7 @@ export class UserService {
     return this.#http.get<User>(url, { headers })
   }
 
-  private destructor() {
-    this.#user.set(new User)
-  }
+  // private destructor() {
+  //   this.#user.set(new User)
+  // }
 }
