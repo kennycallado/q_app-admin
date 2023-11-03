@@ -73,7 +73,7 @@ export class ProjectService {
   }
 
   private get_api_records(): Observable<Project> {
-    let url = this.#project_url + this.#userSvc.user().project.id + '/record/'
+    let url = this.#project_url + this.project().id + '/record/'
     if (this.#authSvc.access_token == null) {
       alert('No access token')
 
