@@ -4,21 +4,42 @@
   </div>
 
   <div class="card-body">
-    <div class="row text-center">
-      <div class="col">
-        <img style="width: 120px;" class="img-fluid" src="assets/images/brands/brand-valencia.jpg" />
-      </div>
-    </div>
 
-    <div class="row text-center justify-content-center">
+    <div class="row text-center justify-content-center mb-3">
       <div class="col">
-        <h3 class="fw-bold">Name project</h3>
-        <hr class="border-primary">
-      </div>
-    </div>
 
-    <div class="row text-center justify-content-center">
-      <div class="col-6">
+        <div class="car border border-primary rounded">
+          <div class="card-header text-center bg-primary bg-opacity-25">
+            <h5 class="fw-bold text-primary">Brand</h5>
+          </div>
+
+          <div class="card-body">
+            <img style="width: 200px;" class="img-fluid text-center" src="assets/images/brands/brand-valencia.jpg" />
+          </div>
+
+          <div class="card-footer">
+            blah
+          </div>
+        </div>
+
+
+        <div class="car border border-primary rounded mt-3">
+          <div class="card-header text-center bg-primary bg-opacity-25">
+            <h5 class="fw-bold text-primary">Name</h5>
+          </div>
+
+          <div class="card-body">
+            <h3 class="fw-bold">{{ project().name }}</h3>
+          </div>
+
+          <div class="card-footer">
+            blah
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col">
         <div class="car border border-primary rounded">
 
           <div class="card-header text-center bg-primary bg-opacity-25">
@@ -28,14 +49,14 @@
           <div class="card-body">
             <ul class="list-group">
 
-              <li class="list-group-item" *ngFor="let key of keys">
+              <li class="list-group-item" *ngFor="let key of project().keys">
                 <div class="row">
                   <div class="col-9">
                     <span>{{ key }}</span>
                   </div>
 
                   <div class="col">
-                    <span (click)="removeKey(key)">❌</span>
+                    <span style="cursor: pointer;" (click)="removeKey(key)">❌</span>
                   </div>
                 </div>
               </li>
@@ -44,11 +65,17 @@
               <li class="list-group-item">
                 <div class="row">
                   <div class="col-9">
-                    <input class="form-control border-info text-center" type="text" placeholder="New" #key/>
+                    <input
+                      class="form-control border-info text-center"
+                      type="text" placeholder="New" #keyInput/>
                   </div>
 
                   <div class="col">
-                    <button class="btn btn-outline-info bg-primary bg-opacity-10" type="button" (click)="addKey(key)">Add</button>
+                    <button
+                      class="btn btn-outline-info bg-primary bg-opacity-10"
+                      type="button"
+                      (click)="addKey(keyInput)"
+                    >Add</button>
                   </div>
                 </div>
               </li>
@@ -58,10 +85,42 @@
           </div>
 
           <div class="card-footer">
-            <button class="btn btn-outline-primary bg-primary bg-opacity-10 w-100 fw-bold" type="button" (click)="save()">Save</button>
+            <div class="row">
+              <div class="col">
+                <button
+                  class="btn btn-outline-primary bg-primary bg-opacity-10 w-100 fw-bold"
+                  type="button"
+                >None</button>
+              </div>
+              <!-- <div class="col"> -->
+              <!--   <button -->
+              <!--     class="btn btn-outline-success bg-primary bg-opacity-10 w-100 fw-bold" -->
+              <!--     type="button" -->
+              <!--     (click)="restore()" -->
+              <!--   >Restore</button> -->
+              <!-- </div> -->
+            </div>
           </div>
 
         </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-3">
+        <button
+          class="btn btn-outline-primary bg-primary bg-opacity-10 w-100 fw-bold"
+          type="button"
+          (click)="save()"
+        >Save</button>
+      </div>
+
+      <div class="col-3">
+        <button
+          class="btn btn-outline-success bg-primary bg-opacity-10 w-100 fw-bold"
+          type="button"
+          (click)="restore()"
+        >Restore</button>
       </div>
     </div>
 
@@ -73,7 +132,23 @@
       </div>
     </div>
 
-    <div class="input-group"></div>
+    <hr class="border-primary">
+
+    <div class="">
+        <button
+          class="btn btn-primary btn-sm"
+          type="button"
+          (click)="load_records()"
+          >Load</button>
+        <h4 class="d-inline ms-3 fw-bold">Records</h4>
+    </div>
+
+    <div>
+      <pre *ngIf="records; else elseNone"><code>{{ records() | json }}</code></pre>
+      <ng-template #elseNone><p>None</p></ng-template>
+    <div>
+
+    <!-- <div class="input-group"></div> -->
 
   </div>
 

@@ -1,7 +1,14 @@
 <ul class="list-group list-group-flush">
-  <li class="list-group-item">An item</li>
-  <li class="list-group-item">A second item</li>
-  <li class="list-group-item">A third item</li>
-  <li class="list-group-item">A fourth item</li>
-  <li class="list-group-item">And a fifth one</li>
+  <li class="list-group-item" *ngFor="let project of projects()">
+    <div class="row rounded" [class.bg-info]="c_project().id === project.id">
+
+      <div class="col-9">
+        <stron style="font-size: 1.5rem;">{{ project.name }}</stron>
+      </div>
+      <div class="col">
+        <span style="font-size: 1.5rem; cursor: pointer;" (click)="change_project(project)">👍</span>
+      </div>
+
+    </div>
+  </li>
 </ul>
