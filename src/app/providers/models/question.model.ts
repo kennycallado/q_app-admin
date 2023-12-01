@@ -1,17 +1,8 @@
 export class Question {
-  id: number;
-  question_type: QuestionType;
-  content: string;
-}
-
-export class NewQuestion {
-  question_type: QuestionType;
-  content: NewQuestionContent
-}
-
-export class NewQuestionContent {
-  locale: string;
-  question: string;
+  id: string;
+  type: QuestionType;
+  range?: RangeQuestion;
+  question: Content;
 }
 
 export enum QuestionType {
@@ -19,4 +10,16 @@ export enum QuestionType {
   Input = 'input',
   Radio = 'radio',
   Range = 'range',
+}
+
+export type RangeQuestion = {
+  min?: number;
+  max?: number;
+  value?: number;
+  // step: number;
+};
+
+export type Content = {
+  locale: string;
+  content: string;
 }

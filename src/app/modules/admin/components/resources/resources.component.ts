@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { QuestionType } from 'src/app/providers/models/question.model';
+import { Component, Signal, inject } from '@angular/core';
 import { Resource, ResourceType } from 'src/app/providers/models/resource.model';
-import { SlideType } from 'src/app/providers/models/slide.model';
+import { ResourcesService } from 'src/app/providers/services/resources.service';
 
 @Component({
   selector: 'app-resources',
@@ -9,31 +8,27 @@ import { SlideType } from 'src/app/providers/models/slide.model';
   styleUrls: ['./resources.component.sass']
 })
 export class ResourcesComponent {
-  currentResource: Resource = { id: 0, resource_type: ResourceType.External, title: '', description: '' };
+  #resoSvc = inject(ResourcesService)
+
   resourceTypes: String[] = Object.values(ResourceType);
 
-  resources: Resource[] = [
-    { id: 1, resource_type: ResourceType.Slides, title: 'Slide 1', description: 'This is the first slide', content: { slides: [
-      { id: 1, title: 'Slide 1', slide_type: SlideType.Content, content: 'This is the content of the first slide' },
-      { id: 2, title: 'Slide 2', slide_type: SlideType.Content, content: 'This is the content of the second slide' }, ] } },
-
-    { id: 2, resource_type: ResourceType.Form, title: 'Slide 2', description: 'This is the second slide', content: { form: [
-      { id: 1, content: 'What is your name?', question_type: QuestionType.Input },
-      { id: 2, content: 'What is your quest?', question_type: QuestionType.Input }, ] } },
-  ]
+  resources: Signal<Resource[]> = this.#resoSvc.resources
 
   getResourceContent(resource: Resource): string {
     let response = [];
 
-    switch (resource.resource_type) {
+    switch (resource.type) {
       case ResourceType.Slides:
-        resource.content.slides.forEach(slide => { response.push(slide.id) })
+        response.push(resource.slides.length)
+        // resource.slides.forEach((slide: any) => { response.push(slide.ref) })
         break
       case ResourceType.Form:
-        resource.content.form.forEach(question => { response.push(question.id) })
+        response.push(resource.form.length)
+        // resource.form.forEach((question: any) => { response.push(question.id) })
         break
       case ResourceType.Module:
-        resource.content.module.forEach(module => { response.push(module) })
+        response.push(resource.module.length)
+        // resource.module.forEach((module: any) => { response.push(module.id) })
         break
     }
 

@@ -25,11 +25,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let resource of resources">
+                <tr *ngFor="let resource of resources()">
                   <td>{{resource.title}}</td>
                   <td>{{resource.description}}</td>
-                  <td>{{resource.resource_type}}</td>
-                  <td *ngIf="resource.content; else elseNone">{{getResourceContent(resource)}}</td>
+                  <td>{{resource.type}}</td>
+                  <td *ngIf="resource; else elseNone">{{getResourceContent(resource)}}</td>
                   <ng-template #elseNone><td>None</td></ng-template>
 
                   <td class="text-info">

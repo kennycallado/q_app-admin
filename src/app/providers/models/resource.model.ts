@@ -2,11 +2,14 @@ import { Question } from "./question.model";
 import { Slide } from "./slide.model";
 
 export class Resource {
-  id: number;
-  resource_type: ResourceType;
-  title: string;
+  id: string;
+  ref: string;
   description: string;
-  content?: Content;
+  title: string;
+  type: ResourceType;
+  form?: string[] | Question[];
+  module?: string[] | Slide[];
+  slides?: string[] | Slide[];
 }
 
 export enum ResourceType {
@@ -14,10 +17,4 @@ export enum ResourceType {
   Module = "module",
   Form = "form",
   External = "external",
-}
-
-export class Content {
-  slides?: Slide[];
-  form?: Question[];
-  module?: number[];
 }

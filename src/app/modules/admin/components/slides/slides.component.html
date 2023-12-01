@@ -25,7 +25,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let slide of slides">
+                <tr *ngFor="let slide of slides()">
                   <td>{{slide.title}}</td>
                   <td>{{slide.slide_type}}</td>
                   <td>{{slide.media || "None"}}</td>

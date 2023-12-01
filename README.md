@@ -2,6 +2,7 @@
 
 ## Todo:
 - [ ] staffs
+- [ ] seguir patrón de q_app-web
 
 ## Notes:
 - generate guard `ng g guard providers/guards/auth`

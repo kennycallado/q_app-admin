@@ -2,12 +2,12 @@ import { Media } from "./media.model";
 import { Question } from "./question.model";
 
 export class Slide {
-  id: number;
-  slide_type: SlideType;
+  id: string;
   title: string;
-  media?: Media | number;
   content?: string;
-  question?: Question | number;
+  media?: Media;
+  type: SlideType;
+  question?: string | Question;
 }
 
 export enum SlideType {
